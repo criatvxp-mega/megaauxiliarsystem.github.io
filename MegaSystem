@@ -1,0 +1,168 @@
+index.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGA Auxiliar System!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MEGA<span>_Auxiliar System!</span></div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#download">Download</a>
+    </nav>
+</header>
+
+<section id="inicio" class="hero">
+
+    <div class="hero-text">
+
+        <p class="tag">MEGA AUXILIAR SYSTEM</p>
+
+        <h1>
+            Seu assistente.<br>
+            <span>Seu sistema.</span>
+        </h1>
+
+        <p>
+            Conheça o MEGA_portátil, um assistente leve para Windows,
+            criado para executar comandos e ficar sempre ao seu lado.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#download" class="button primary">
+                Baixar MEGA
+            </a>
+
+            <a href="#recursos" class="button secondary">
+                Conhecer
+            </a>
+
+        </div>
+
+        <small>Versão atual: 1.0.0</small>
+
+    </div>
+
+    <div class="mega">
+
+        <div class="eyes">
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+        </div>
+
+        <h3>MEGA_portátil</h3>
+
+        <p>Pronto para ouvir.</p>
+
+    </div>
+
+</section>
+
+
+<section id="recursos" class="section">
+
+    <p class="tag">RECURSOS</p>
+
+    <h2>Feito para ser simples.</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">🎙️</div>
+
+            <h3>Comandos por voz</h3>
+
+            <p>
+                Ative o MEGA e diga o comando que deseja executar.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">🎨</div>
+
+            <h3>Personalização</h3>
+
+            <p>
+                Personalize os olhos, cores, tamanho e posição.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">⚙️</div>
+
+            <h3>Configurações</h3>
+
+            <p>
+                Configure o comportamento do MEGA do seu jeito.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">🔄</div>
+
+            <h3>Atualizações</h3>
+
+            <p>
+                Receba novas versões e melhorias do sistema.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="download" class="download">
+
+    <p class="tag">DOWNLOAD</p>
+
+    <h2>Tenha o MEGA com você.</h2>
+
+    <p>
+        Baixe o MEGA_portátil para Windows.
+    </p>
+
+    <a href="#" class="button primary download-button">
+        Baixar MEGA_portátil
+    </a>
+
+    <small>
+        Windows 10 ou superior • Versão 1.0.0
+    </small>
+
+</section>
+
+
+<footer>
+
+    <div class="logo">
+        MEGA<span>_Auxiliar System!</span>
+    </div>
+
+    <p>
+        Projeto MEGA_portátil
+    </p>
+
+</footer>
+
+</body>
+</html>
