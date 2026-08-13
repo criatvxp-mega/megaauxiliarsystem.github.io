@@ -1,57 +1,618 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEGA Auxiliar System!</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MEGA Auxiliar System!</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #070707;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    height: 70px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #090909;
+    border-bottom: 1px solid #202020;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00ff66;
+}
+
+.logo span {
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #00ff66;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 650px;
+    padding: 100px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 80px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.tag {
+    color: #00ff66;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+h1 span {
+    color: #00ff66;
+}
+
+.hero-text > p:not(.tag) {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+/* ================= BOTÕES ================= */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.primary {
+    background: #00cc55;
+    color: black;
+}
+
+.primary:hover {
+    background: #00ff66;
+    transform: translateY(-2px);
+}
+
+.secondary {
+    border: 1px solid #333;
+    color: white;
+}
+
+.secondary:hover {
+    border-color: #00ff66;
+}
+
+.hero-text small,
+.download small {
+    color: #666;
+}
+
+/* ================= MEGA ================= */
+
+.mega {
+    width: 280px;
+    height: 220px;
+
+    border: 1px solid #222;
+    border-radius: 20px;
+
+    background: #0d0d0d;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 0 60px rgba(0,255,102,0.08);
+}
+
+.eyes {
+    display: flex;
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+.eye {
+    width: 65px;
+    height: 45px;
+
+    background: #00ff66;
+
+    clip-path: polygon(
+        0 50%,
+        25% 10%,
+        75% 10%,
+        100% 50%,
+        75% 90%,
+        25% 90%
+    );
+
+    box-shadow:
+        0 0 25px #00ff66;
+}
+
+.mega h3 {
+    margin-bottom: 8px;
+}
+
+.mega p {
+    color: #666;
+}
+
+/* ================= RECURSOS ================= */
+
+.section {
+    padding: 100px 8%;
+
+    border-top: 1px solid #151515;
+}
+
+.section h2,
+.download h2 {
+    font-size: 45px;
+
+    margin-bottom: 50px;
+}
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    background: #0d0d0d;
+
+    border: 1px solid #1d1d1d;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    transition: 0.25s;
+}
+
+.card:hover {
+    border-color: #00cc55;
+
+    transform:
+        translateY(-5px);
+}
+
+.icon {
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #888;
+
+    line-height: 1.5;
+}
+
+/* ================= DOWNLOAD ================= */
+
+.download {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid #151515;
+}
+
+.download h2 {
+    margin-bottom: 15px;
+}
+
+.download > p:not(.tag) {
+    color: #888;
+
+    margin-bottom: 30px;
+}
+
+.download-button {
+    margin-bottom: 20px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 40px 8%;
+
+    border-top: 1px solid #151515;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #666;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 850px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 70px 5%;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .section {
+        padding: 70px 5%;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .mega {
+        width: 240px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+}
+
+</style>
 </head>
+
 <body>
+
+<!-- ================= HEADER ================= -->
+
 <header>
-    <div class="logo">MEGA<span>_Auxiliar System!</span></div>
+
+    <div class="logo">
+        MEGA<span>_Auxiliar System!</span>
+    </div>
+
     <nav>
-        <a href="#inicio">Início</a>
-        <a href="#recursos">Recursos</a>
-        <a href="#download">Download</a>
+
+        <a href="#inicio">
+            Início
+        </a>
+
+        <a href="#recursos">
+            Recursos
+        </a>
+
+        <a href="#download">
+            Download
+        </a>
+
     </nav>
+
 </header>
-<section id="inicio" class="hero">
+
+
+<!-- ================= INÍCIO ================= -->
+
+<section
+    id="inicio"
+    class="hero"
+>
+
     <div class="hero-text">
-        <p class="tag">MEGA AUXILIAR SYSTEM</p>
-        <h1>Seu assistente.<br><span>Seu sistema.</span></h1>
-        <p>Conheça o MEGA_portátil, um assistente leve para Windows, criado para executar comandos e ficar sempre ao seu lado.</p>
+
+        <p class="tag">
+            MEGA AUXILIAR SYSTEM
+        </p>
+
+        <h1>
+            Seu assistente.
+            <br>
+            <span>
+                Seu sistema.
+            </span>
+        </h1>
+
+        <p>
+            Conheça o MEGA_portátil,
+            um assistente leve para Windows,
+            criado para executar comandos
+            e ficar sempre ao seu lado.
+        </p>
+
         <div class="buttons">
-            <a href="#download" class="button primary">Baixar MEGA</a>
-            <a href="#recursos" class="button secondary">Conhecer</a>
+
+            <a
+                href="#download"
+                class="button primary"
+            >
+                Baixar MEGA
+            </a>
+
+            <a
+                href="#recursos"
+                class="button secondary"
+            >
+                Conhecer
+            </a>
+
         </div>
-        <small>Versão atual: 1.0.0</small>
+
+        <small>
+            Versão atual: 1.0.0
+        </small>
+
     </div>
+
+
+    <!-- REPRESENTAÇÃO DO MEGA -->
+
     <div class="mega">
-        <div class="eyes"><div class="eye left"></div><div class="eye right"></div></div>
-        <h3>MEGA_portátil</h3>
-        <p>Pronto para ouvir.</p>
+
+        <div class="eyes">
+
+            <div class="eye"></div>
+
+            <div class="eye"></div>
+
+        </div>
+
+        <h3>
+            MEGA_portátil
+        </h3>
+
+        <p>
+            Pronto para ouvir.
+        </p>
+
     </div>
+
 </section>
-<section id="recursos" class="section">
-    <p class="tag">RECURSOS</p>
-    <h2>Feito para ser simples.</h2>
+
+
+<!-- ================= RECURSOS ================= -->
+
+<section
+    id="recursos"
+    class="section"
+>
+
+    <p class="tag">
+        RECURSOS
+    </p>
+
+    <h2>
+        Feito para ser simples.
+    </h2>
+
+
     <div class="cards">
-        <div class="card"><div class="icon">🎙️</div><h3>Comandos por voz</h3><p>Ative o MEGA e diga o comando que deseja executar.</p></div>
-        <div class="card"><div class="icon">🎨</div><h3>Personalização</h3><p>Personalize os olhos, cores, tamanho e posição.</p></div>
-        <div class="card"><div class="icon">⚙️</div><h3>Configurações</h3><p>Configure o comportamento do MEGA do seu jeito.</p></div>
-        <div class="card"><div class="icon">🔄</div><h3>Atualizações</h3><p>Receba novas versões e melhorias do sistema.</p></div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎙️
+            </div>
+
+            <h3>
+                Comandos por voz
+            </h3>
+
+            <p>
+                Ative o MEGA e diga
+                o comando que deseja executar.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎨
+            </div>
+
+            <h3>
+                Personalização
+            </h3>
+
+            <p>
+                Personalize os olhos,
+                cores, tamanho e posição.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Configurações
+            </h3>
+
+            <p>
+                Configure o comportamento
+                do MEGA do seu jeito.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🔄
+            </div>
+
+            <h3>
+                Atualizações
+            </h3>
+
+            <p>
+                Receba novas versões
+                e melhorias do sistema.
+            </p>
+
+        </div>
+
+
     </div>
+
 </section>
-<section id="download" class="download">
-    <p class="tag">DOWNLOAD</p>
-    <h2>Tenha o MEGA com você.</h2>
-    <p>Baixe o MEGA_portátil para Windows.</p>
-    <a href="#" class="button primary download-button">Baixar MEGA_portátil</a>
-    <small>Windows 10 ou superior • Versão 1.0.0</small>
+
+
+<!-- ================= DOWNLOAD ================= -->
+
+<section
+    id="download"
+    class="download"
+>
+
+    <p class="tag">
+        DOWNLOAD
+    </p>
+
+    <h2>
+        Tenha o MEGA com você.
+    </h2>
+
+    <p>
+        Baixe o MEGA_portátil para Windows.
+    </p>
+
+    <a
+        href="#"
+        class="button primary download-button"
+    >
+        Baixar MEGA_portátil
+    </a>
+
+    <br>
+
+    <small>
+        Windows 10 ou superior
+        •
+        Versão 1.0.0
+    </small>
+
 </section>
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    <div class="logo">MEGA<span>_Auxiliar System!</span></div>
-    <p>Projeto MEGA_portátil</p>
+
+    <div class="logo">
+        MEGA<span>_Auxiliar System!</span>
+    </div>
+
+    <p>
+        Projeto MEGA_portátil
+    </p>
+
 </footer>
+
+
 </body>
 </html>
